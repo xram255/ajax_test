@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>The Title</h3>
+    <button id="button">Get text file</button>
+
+    <script>
+        document.getElementById('button').addEventListener('click', loadText);
+        function loadText()
+        {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'sample.txt', true);
+            xhr.onload = function()
+            {
+                if(xhr.status == 200)
+                {
+                    console.log(this.responseText);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
